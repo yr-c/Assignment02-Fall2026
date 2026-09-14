@@ -1,5 +1,6 @@
 package yoonchan.assignment02.fall2026;
 
+import java.util.Objects;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -20,12 +21,17 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         HBox root = new HBox();
+        root.setId("main-box");
+        root.setPadding(new Insets(20));
+
         GridPane left = new GridPane();
         VBox right = new VBox();
         root.getChildren().addAll(left, right);
 
         left.setAlignment(Pos.CENTER);
         left.setPadding(new Insets(10));
+        left.setHgap(10);
+        left.setVgap(8);
         Label numDaysLabel = new Label("Number of trip days:");
         Label airfareLabel = new Label("Airfare ($):");
         Label carRentalLabel = new Label("Car rental:");
@@ -64,13 +70,17 @@ public class App extends Application {
 
         right.setAlignment(Pos.CENTER_LEFT);
         right.setPadding(new Insets(10));
+        right.setSpacing(10);
         Label rightTitle = new Label("Summary:");
+        rightTitle.setId("title-label");
+
         Label totalExpenses = new Label("Total expenses: ");
         Label allowableExpenses = new Label("Allowable expenses: ");
         Label expensesDue = new Label("Expenses due: ");
         Label expensesSaved = new Label("Expenses saved: ");
 
         Label infoLabel = new Label("");
+        infoLabel.setStyle("-fx-text-fill: red;");
 
         right.getChildren().addAll(rightTitle, totalExpenses, allowableExpenses,
                 expensesDue, expensesSaved, infoLabel);
@@ -95,12 +105,19 @@ public class App extends Application {
                 expensesDue.setText(String.format("Expenses due: %.2f", receipt[2]));
                 expensesSaved.setText(String.format("Expenses saved: %.2f", receipt[3]));
 
+                stage.sizeToScene();
+
+                infoLabel.setText("");
+
             } catch (NumberFormatException exception) {
                 infoLabel.setText("Please input valid numbers for the fields.");
+                stage.sizeToScene();
             }
         });
 
-        Scene scene = new Scene(root, 640, 480);
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/styles.css")).toExternalForm());
+
         stage.setScene(scene);
         stage.show();
     }
