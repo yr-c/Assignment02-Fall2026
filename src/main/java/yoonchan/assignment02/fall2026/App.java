@@ -70,8 +70,35 @@ public class App extends Application {
         Label expensesDue = new Label("Expenses due: ");
         Label expensesSaved = new Label("Expenses saved: ");
 
+        Label infoLabel = new Label("");
+
         right.getChildren().addAll(rightTitle, totalExpenses, allowableExpenses,
-                expensesDue, expensesSaved);
+                expensesDue, expensesSaved, infoLabel);
+
+        calculateButtonLabel.setOnAction(e -> {
+            try {
+                int numDays = Integer.parseInt(numDaysField.getText());
+                double airfare = Double.parseDouble(airfareField.getText());
+                double carRentalFees = Double.parseDouble(carRentalField.getText());
+                double milesDriven = Double.parseDouble(milesDrivenField.getText());
+                double parkingFees = Double.parseDouble(parkingFeesField.getText());
+                double taxiFees = Double.parseDouble(taxiChargesField.getText());
+                double registrationFees = Double.parseDouble(registrationFeesField.getText());
+                double lodgingFees = Double.parseDouble(lodgingFeesField.getText());
+
+                double[] receipt = calculateReciept(numDays, airfare,
+                        carRentalFees, milesDriven, parkingFees, taxiFees,
+                        registrationFees, lodgingFees);
+
+                totalExpenses.setText(String.format("Total expenses: %.2f", receipt[0]));
+                allowableExpenses.setText(String.format("Allowed expenses: %.2f", receipt[1]));
+                expensesDue.setText(String.format("Expenses due: %.2f", receipt[2]));
+                expensesSaved.setText(String.format("Expenses saved: %.2f", receipt[3]));
+
+            } catch (NumberFormatException exception) {
+                infoLabel.setText("Please input valid numbers for the fields.");
+            }
+        });
 
         Scene scene = new Scene(root, 640, 480);
         stage.setScene(scene);
