@@ -46,7 +46,7 @@ public class App extends Application {
         left.add(calculateButtonLabel, 0, leftLabels.length);
 
         TextField numDaysField = new TextField();
-        TextField airFareField = new TextField();
+        TextField airfareField = new TextField();
         TextField carRentalField = new TextField();
         TextField milesDrivenField = new TextField();
         TextField parkingFeesField = new TextField();
@@ -54,7 +54,7 @@ public class App extends Application {
         TextField registrationFeesField = new TextField();
         TextField lodgingFeesField = new TextField();
 
-        TextField[] leftFields = {numDaysField, airFareField, carRentalField,
+        TextField[] leftFields = {numDaysField, airfareField, carRentalField,
             milesDrivenField, parkingFeesField, taxiChargesField,
             registrationFeesField, lodgingFeesField};
 
@@ -85,7 +85,7 @@ public class App extends Application {
     /**
      * Calculates all trip expenses, and returns the receipt.
      *
-     * @param numDays The number of days of the trip
+     * @param numDays The number of airfare of the trip
      * @param airFare The airfare cost
      * @param carRentalFees The car rental cost
      * @param milesDriven The amount of miles driven on a private vehicle
@@ -98,11 +98,11 @@ public class App extends Application {
      * client.
      *
      */
-    private static double[] calculateReciept(int numDays, double airFare,
+    private static double[] calculateReciept(int numDays, double airfare,
             double carRentalFees, double milesDriven, double parkingFees, double taxiFees,
             double registrationFees, double lodgingFees) {
 
-        double totalExpenses = airFare + carRentalFees + parkingFees + taxiFees
+        double totalExpenses = airfare + carRentalFees + parkingFees + taxiFees
                 + registrationFees + lodgingFees * numDays;
 
         double paidParkingPerDay = 10d;
