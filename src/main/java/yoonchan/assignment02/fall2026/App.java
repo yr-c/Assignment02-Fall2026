@@ -41,7 +41,6 @@ public class App extends Application {
             left.add(leftLabels[i], 0, i);
         }
 
-        right.setAlignment(Pos.CENTER);
         TextField numDaysField = new TextField();
         TextField airFareField = new TextField();
         TextField carRentalField = new TextField();
@@ -58,6 +57,18 @@ public class App extends Application {
         for (int i = 0; i < leftFields.length; i++) {
             left.add(leftFields[i], 1, i);
         }
+
+        right.setAlignment(Pos.CENTER_LEFT);
+        right.setPadding(new Insets(10));
+        Label rightTitle = new Label("Summary:");
+        Label totalExpenses = new Label("Total expenses: ");
+        Label allowableExpenses = new Label("Allowable expenses: ");
+        Label expensesDue = new Label("Expenses due: ");
+        Label expensesSaved = new Label("Expenses saved: ");
+
+        right.getChildren().addAll(rightTitle, totalExpenses, allowableExpenses,
+                expensesDue, expensesSaved);
+
         Scene scene = new Scene(root, 640, 480);
         stage.setScene(scene);
         stage.show();
