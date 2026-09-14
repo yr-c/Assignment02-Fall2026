@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 
 /**
  * JavaFX App
+ *
+ * GitHub: https://github.com/yr-c/Assignment02-Fall2026
  */
 public class App extends Application {
 
