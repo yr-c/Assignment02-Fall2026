@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -25,21 +26,27 @@ public class App extends Application {
 
         left.setAlignment(Pos.CENTER);
         left.setPadding(new Insets(10));
-        Label numDays = new Label("Number of trip days:");
-        Label airfare = new Label("Airfare ($):");
-        Label carRental = new Label("Car rental:");
-        Label milesDriven = new Label("Miles driven:");
-        Label parkingFees = new Label("Parking Fees:");
-        Label taxiCharges = new Label("Taxi charges:");
-        Label registrationFees = new Label("Event registration fees:");
-        Label lodgingCharges = new Label("Lodging charges (per night):");
+        Label numDaysLabel = new Label("Number of trip days:");
+        Label airfareLabel = new Label("Airfare ($):");
+        Label carRentalLabel = new Label("Car rental:");
+        Label milesDrivenLabel = new Label("Miles driven:");
+        Label parkingFeesLabel = new Label("Parking Fees:");
+        Label taxiChargesLabel = new Label("Taxi charges:");
+        Label registrationFeesLabel = new Label("Event registration fees:");
+        Label lodgingChargesLabel = new Label("Lodging charges (per night):");
+        Button calculateButtonLabel = new Button("Calculate expenses");
 
-        Label[] leftLabels = {numDays, airfare, carRental, milesDriven,
-            parkingFees, taxiCharges, registrationFees, lodgingCharges};
+        Label[] leftLabels = {numDaysLabel, airfareLabel, carRentalLabel, milesDrivenLabel,
+            parkingFeesLabel, taxiChargesLabel, registrationFeesLabel, lodgingChargesLabel};
 
         for (int i = 0; i < leftLabels.length; i++) {
             left.add(leftLabels[i], 0, i);
         }
+
+        left.add(calculateButtonLabel, 0, leftLabels.length);
+
+        calculateButtonLabel.setOnAction(e -> {
+        });
 
         TextField numDaysField = new TextField();
         TextField airFareField = new TextField();
