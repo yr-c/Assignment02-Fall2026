@@ -98,6 +98,13 @@ public class App extends Application {
                 double registrationFees = Double.parseDouble(registrationFeesField.getText());
                 double lodgingFees = Double.parseDouble(lodgingFeesField.getText());
 
+                if (numDays < 0 || airfare < 0 || carRentalFees < 0
+                        || milesDriven < 0 || parkingFees < 0 || taxiFees < 0
+                        || registrationFees < 0 || lodgingFees < 0) {
+                    infoLabel.setText("Warning: negative value found.");
+                    return;
+                }
+
                 double[] receipt = calculateReciept(numDays, airfare,
                         carRentalFees, milesDriven, parkingFees, taxiFees,
                         registrationFees, lodgingFees);
