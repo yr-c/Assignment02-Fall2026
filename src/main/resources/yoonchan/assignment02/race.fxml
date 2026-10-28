@@ -20,7 +20,7 @@
 
 <VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yoonchan.assignment02.RaceController">
    <children>
-       <HBox alignment="CENTER" prefHeight="460.0" prefWidth="1240.0" spacing="5.0">
+       <HBox alignment="CENTER" prefHeight="460.0" prefWidth="1240.0" spacing="5.0" styleClass="major-container" stylesheets="@styles.css">
            <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: green;">
                <children>
@@ -31,7 +31,7 @@
                   </Text>
                </children>
             </VBox>
-            <Pane prefHeight="600.0" prefWidth="1050.0" stylesheets="@styles.css">
+            <Pane prefHeight="600.0" prefWidth="1050.0">
                <children>
                        <Group fx:id="car1">
                            <children>
@@ -131,7 +131,7 @@
             </VBox>
            </children>
        </HBox>
-      <GridPane alignment="BASELINE_CENTER" VBox.vgrow="ALWAYS">
+      <GridPane alignment="BASELINE_CENTER" hgap="20.0" VBox.vgrow="ALWAYS">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -140,9 +140,9 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <VBox alignment="TOP_CENTER" spacing="10.0">
+            <VBox alignment="TOP_CENTER" spacing="10.0" styleClass="major-container" stylesheets="@styles.css">
                <children>
-                  <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" spacing="80.0">
+                  <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" spacing="50.0">
                      <children>
                       <Button id="start-button" fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#startRace" prefHeight="100.0" prefWidth="200.0" stylesheets="@styles.css" text="Start" />
                         <Button id="pause-button" fx:id="pauseButton" alignment="CENTER" mnemonicParsing="false" onAction="#pauseRace" prefHeight="100.0" prefWidth="200.0" stylesheets="@styles.css" text="Pause" />
@@ -150,9 +150,13 @@
                      </children>
                   </HBox>
                   <Label text="SImulation speed:" />
-                  <Slider fx:id="speedSlider" blockIncrement="0.25" majorTickUnit="0.5" max="3.75" min="0.25" minorTickCount="1" showTickLabels="true" showTickMarks="true" />
+                  <Slider fx:id="speedSlider" blockIncrement="0.25" majorTickUnit="0.5" max="3.75" min="0.25" minorTickCount="1" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
                </children>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
             </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="major-container" stylesheets="@styles.css" GridPane.columnIndex="1" />
          </children>
       </GridPane>
    </children>
