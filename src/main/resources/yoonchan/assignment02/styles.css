@@ -1,0 +1,19 @@
+.root {
+    -fx-background-color: white
+}
+
+.button {
+    -fx-background-radius: 10px;
+}
+
+#start-button {
+    -fx-background-color: green
+}
+
+#pause-button {
+    -fx-background-color: #0088ff
+}
+
+#reset-button {
+    -fx-background-color: red
+}
