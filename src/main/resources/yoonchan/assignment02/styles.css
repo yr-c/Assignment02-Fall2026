@@ -16,13 +16,38 @@
 }
 
 #start-button {
-    -fx-background-color: green
+    -fx-background-color: #00ba00
+}
+
+#start-button:hover {
+    -fx-background-color: #006100;
+    -fx-cursor: hand
 }
 
 #pause-button {
     -fx-background-color: #0088ff
 }
 
+#pause-button:hover {
+    -fx-background-color: #0059a6;
+    -fx-cursor: hand
+}
+
 #reset-button {
     -fx-background-color: red
+}
+
+#reset-button:hover {
+    -fx-background-color: #870000;
+    -fx-cursor: hand
+}
+
+.slider {
+    -fx-background-color: #bbe1ff;
+    -fx-background-radius: 20px;
+}
+
+.slider .axis .axis-tick-mark {
+    -fx-stroke: #0088ff; /* Color of minor/major tick lines */
+    -fx-stroke-width: 1px;
 }
