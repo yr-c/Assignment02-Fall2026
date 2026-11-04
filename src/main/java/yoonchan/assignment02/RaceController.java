@@ -5,26 +5,29 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
+import javafx.scene.paint.Color;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.List;
+
+@Getter
+@Setter
 public class RaceController {
-    private static RaceState raceState;
-    private static RacecarModel winner;
-
-    public static RaceState getRaceState() {
-        return raceState;
-    }
-
-    public static void setRaceState(RaceState raceState) {
-        RaceController.raceState = raceState;
-    }
-
-    public enum RaceState {
-        READY, LIVE, PAUSED, FINISHED
-    }
-
     @FXML
     private void initialize() {
+        RacecarModel car1 = new RacecarModel(12, "Ferrari", Color.RED);
+        RacecarModel car2 = new RacecarModel(43, "BMW", Color.BLUE);
+        RacecarModel car3 = new RacecarModel(2, "Chevrolet", Color.YELLOW);
+        RacecarModel car4 = new RacecarModel(98, "Audi", Color.GREEN);
 
+        RaceManager raceManager = new RaceManager(List.of(car1, car2, car3, car4));
+        raceManager.initRace();
+
+        getCar1().setId("redCar");
+        getCar2().setId("blueCar");
+        getCar3().setId("yellowCar");
+        getCar4().setId("greenCar");
     }
 
     @FXML
