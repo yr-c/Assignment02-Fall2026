@@ -9,6 +9,7 @@ import javafx.scene.paint.Color;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Getter
@@ -16,12 +17,12 @@ import java.util.List;
 public class RaceController {
     @FXML
     private void initialize() {
-        RacecarModel car1 = new RacecarModel(12, "Ferrari", Color.RED);
-        RacecarModel car2 = new RacecarModel(43, "BMW", Color.BLUE);
-        RacecarModel car3 = new RacecarModel(2, "Chevrolet", Color.YELLOW);
-        RacecarModel car4 = new RacecarModel(98, "Audi", Color.GREEN);
+        RacecarModel redCar = new RacecarModel(12, "Ferrari", Color.RED);
+        RacecarModel blueCar = new RacecarModel(43, "BMW", Color.BLUE);
+        RacecarModel yellowCar = new RacecarModel(2, "Chevrolet", Color.YELLOW);
+        RacecarModel greenCar = new RacecarModel(98, "Audi", Color.GREEN);
 
-        RaceManager raceManager = new RaceManager(List.of(car1, car2, car3, car4));
+        RaceManager raceManager = new RaceManager(List.of(redCar, blueCar, yellowCar, greenCar));
         raceManager.initRace();
 
         getCar1().setId("redCar");

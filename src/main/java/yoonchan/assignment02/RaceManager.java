@@ -1,11 +1,13 @@
 package yoonchan.assignment02;
 
+import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+@Getter
 public class RaceManager {
     @Setter
     private RaceState raceState;
@@ -38,14 +40,20 @@ public class RaceManager {
     private void initPodium() {
         Random rand = new Random();
 
+        // Available finishing positions
         List<Integer> positions = new ArrayList<>(List.of(1, 2, 3, 4));
 
         for (RacecarModel car : cars) {
-            int index = rand.nextInt(positions.size());
+            // 1. Get a random INDEX from the remaining available positions
+            int randomIndex = rand.nextInt(positions.size());
 
-            car.setFinishPosition(index + 1);
-            podium[index] = car;
-            positions.remove(index);
+            // 2. Remove the position from the list so it can't be reused
+            // (remove(int index) returns the value that was at that index)
+            int actualPosition = positions.remove(randomIndex);
+
+            // 3. Assign the actual position to the car
+            car.setFinishPosition(actualPosition);
+            podium[actualPosition - 1] = car;
         }
     }
 
@@ -56,8 +64,8 @@ public class RaceManager {
         Random rand = new Random();
 
         for (RacecarModel car : cars) {
-            double lowerBound = timePool.get(car.getFinishPosition())[0];
-            double upperBound = timePool.get(car.getFinishPosition())[1];
+            double lowerBound = timePool.get(car.getFinishPosition() - 1)[0];
+            double upperBound = timePool.get(car.getFinishPosition() - 1)[1];
 
             car.setAnimationTime(rand.nextDouble() * (upperBound - lowerBound) + lowerBound);
         }
