@@ -1,11 +1,14 @@
 package yoonchan.assignment02;
 
+import javafx.animation.ParallelTransition;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.paint.Color;
+import javafx.util.Duration;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +17,9 @@ import java.util.List;
 @Getter
 @Setter
 public class RaceController {
+    private ParallelTransition pt = new ParallelTransition();
+
+    // TODO: Set positions for transitions, animate wheels separately, create slideshow
     @FXML
     private void initialize() {
         RacecarModel redCar = new RacecarModel(12, "Ferrari", Color.RED);
@@ -24,23 +30,25 @@ public class RaceController {
         RaceManager raceManager = new RaceManager(List.of(redCar, blueCar, yellowCar, greenCar));
         raceManager.initRace();
 
-        getCar1().setId("redCar");
-        getCar2().setId("blueCar");
-        getCar3().setId("yellowCar");
-        getCar4().setId("greenCar");
+        TranslateTransition redCarTransition = new TranslateTransition(Duration.seconds(redCar.getAnimationTime()), getRedCar());
+        TranslateTransition blueCarTransition = new TranslateTransition(Duration.seconds(blueCar.getAnimationTime()), getBlueCar());
+        TranslateTransition yellowCarTransition = new TranslateTransition(Duration.seconds(yellowCar.getAnimationTime()), getYellowCar());
+        TranslateTransition greenCarTransition = new TranslateTransition(Duration.seconds(greenCar.getAnimationTime()), getGreenCar());
+
+        pt.getChildren().addAll(redCarTransition, blueCarTransition, yellowCarTransition, greenCarTransition);
     }
 
     @FXML
-    private Group car1;
+    private Group redCar;
 
     @FXML
-    private Group car2;
+    private Group blueCar;
 
     @FXML
-    private Group car3;
+    private Group yellowCar;
 
     @FXML
-    private Group car4;
+    private Group greenCar;
 
     @FXML
     private Button pauseButton;
@@ -56,16 +64,16 @@ public class RaceController {
 
     @FXML
     void pauseRace(ActionEvent event) {
-
+        pt.pause();
     }
 
     @FXML
     void resetRace(ActionEvent event) {
-
+        pt.stop();
     }
 
     @FXML
     void startRace(ActionEvent event) {
-
+        pt.play();
     }
 }

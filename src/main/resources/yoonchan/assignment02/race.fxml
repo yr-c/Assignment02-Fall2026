@@ -34,7 +34,7 @@
             </VBox>
             <Pane prefHeight="600.0" prefWidth="1050.0">
                <children>
-                       <Group fx:id="car1">
+                       <Group fx:id="redCar">
                            <children>
                                <!-- Lower body -->
                                <Polygon fill="#e53935" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82" stroke="#212121" strokeWidth="1" />
@@ -60,15 +60,16 @@
                                <!-- Front wheel -->
                                <Circle centerX="160" centerY="82" fill="#212121" radius="18" />
                                <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7" />
+                        <Label layoutX="97.0" layoutY="55.0" style="-fx-background-color: white;" text="Label" />
                            </children>
                        </Group>
-                  <Group fx:id="car2" layoutY="115.0">
+                  <Group fx:id="blueCar" layoutY="115.0">
                      <children>
-                        <Polygon fill="#e53935" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82" stroke="#212121" strokeWidth="1" />
-                        <Polygon fill="#e53935" points="65, 50, 88, 2, 138, 2, 162, 50" stroke="#212121" strokeWidth="1" />
+                        <Polygon fill="#3674e3" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82" stroke="#212121" strokeWidth="1" />
+                        <Polygon fill="#3674e3" points="65, 50, 88, 2, 138, 2, 162, 50" stroke="#212121" strokeWidth="1" />
                         <Polygon fill="#b3e5fc" points="90, 8, 112, 8, 112, 46, 72, 46" />
                         <Polygon fill="#b3e5fc" points="118.0, 8.0, 136.0, 8.0, 149.59999084472656, 45.99999237060547, 118.0, 46.0" />
-                        <Circle centerX="162" centerY="44" fill="#e53935" radius="4" stroke="#212121" strokeWidth="1" />
+                        <Circle centerX="162" centerY="44" fill="#3674e3" radius="4" stroke="#212121" strokeWidth="1" />
                         <Line endX="112" endY="80" startX="112" startY="52" stroke="#212121" strokeWidth="1" />
                         <Rectangle fill="#212121" height="4" width="12" x="120" y="56" />
                         <Circle centerX="202" centerY="62" fill="#ffeb3b" radius="5" />
@@ -81,13 +82,13 @@
                         <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7" />
                      </children>
                   </Group>
-                  <Group fx:id="car3" layoutY="230.0">
+                  <Group fx:id="yellowCar" layoutY="230.0">
                      <children>
-                        <Polygon fill="#e53935" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82" stroke="#212121" strokeWidth="1" />
-                        <Polygon fill="#e53935" points="65, 50, 88, 2, 138, 2, 162, 50" stroke="#212121" strokeWidth="1" />
+                        <Polygon fill="#ffff14" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82" stroke="#212121" strokeWidth="1" />
+                        <Polygon fill="#ffff14" points="65, 50, 88, 2, 138, 2, 162, 50" stroke="#212121" strokeWidth="1" />
                         <Polygon fill="#b3e5fc" points="90, 8, 112, 8, 112, 46, 72, 46" />
                         <Polygon fill="#b3e5fc" points="118.0, 8.0, 136.0, 8.0, 149.59999084472656, 45.99999237060547, 118.0, 46.0" />
-                        <Circle centerX="162" centerY="44" fill="#e53935" radius="4" stroke="#212121" strokeWidth="1" />
+                        <Circle centerX="162" centerY="44" fill="#ffff14" radius="4" stroke="#212121" strokeWidth="1" />
                         <Line endX="112" endY="80" startX="112" startY="52" stroke="#212121" strokeWidth="1" />
                         <Rectangle fill="#212121" height="4" width="12" x="120" y="56" />
                         <Circle centerX="202" centerY="62" fill="#ffeb3b" radius="5" />
@@ -100,13 +101,13 @@
                         <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7" />
                      </children>
                   </Group>
-                  <Group fx:id="car4" layoutY="345.0">
+                  <Group fx:id="greenCar" layoutY="345.0">
                      <children>
-                        <Polygon fill="#e53935" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82" stroke="#212121" strokeWidth="1" />
-                        <Polygon fill="#e53935" points="65, 50, 88, 2, 138, 2, 162, 50" stroke="#212121" strokeWidth="1" />
+                        <Polygon fill="GREEN" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82" stroke="#212121" strokeWidth="1" />
+                        <Polygon fill="GREEN" points="65, 50, 88, 2, 138, 2, 162, 50" stroke="#212121" strokeWidth="1" />
                         <Polygon fill="#b3e5fc" points="90, 8, 112, 8, 112, 46, 72, 46" />
                         <Polygon fill="#b3e5fc" points="118.0, 8.0, 136.0, 8.0, 149.59999084472656, 45.99999237060547, 118.0, 46.0" />
-                        <Circle centerX="162" centerY="44" fill="#e53935" radius="4" stroke="#212121" strokeWidth="1" />
+                        <Circle centerX="162" centerY="44" fill="GREEN" radius="4" stroke="#212121" strokeWidth="1" />
                         <Line endX="112" endY="80" startX="112" startY="52" stroke="#212121" strokeWidth="1" />
                         <Rectangle fill="#212121" height="4" width="12" x="120" y="56" />
                         <Circle centerX="202" centerY="62" fill="#ffeb3b" radius="5" />
