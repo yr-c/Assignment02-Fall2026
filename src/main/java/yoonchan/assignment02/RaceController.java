@@ -9,7 +9,6 @@ import javafx.scene.paint.Color;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Getter
