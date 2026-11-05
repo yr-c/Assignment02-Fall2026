@@ -41,6 +41,10 @@ public class RaceSceneController {
         greenCarTransition.setToX(828);
 
         pt.getChildren().addAll(redCarTransition, blueCarTransition, yellowCarTransition, greenCarTransition);
+
+        speedSlider.valueProperty().addListener((ov, oldVal, newVal) -> {
+            pt.setRate(newVal.doubleValue());
+        });
     }
 
     @FXML
@@ -75,6 +79,10 @@ public class RaceSceneController {
     @FXML
     void resetRace(ActionEvent event) {
         pt.stop();
+        redCar.setTranslateX(0);
+        blueCar.setTranslateX(0);
+        yellowCar.setTranslateX(0);
+        greenCar.setTranslateX(0);
     }
 
     @FXML

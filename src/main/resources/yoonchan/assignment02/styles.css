@@ -51,7 +51,19 @@
     -fx-background-color: #0088ff;
 }
 
-.slider .axis .axis-tick-mark {
+.slider .axis {
+    -fx-tick-label-font-size: 14px;
+    -fx-tick-label-font-family: "Outfit";
+    -fx-tick-label-fill: #0088ff;
+    -fx-tick-label-font-weight: bold;
+}
+
+.slider .axis-tick-mark {
+    -fx-stroke: #41a6fd; /* Color of minor/major tick lines */
+    -fx-stroke-width: 2px;
+}
+
+.slider .axis-minor-tick-mark {
     -fx-stroke: #0088ff; /* Color of minor/major tick lines */
     -fx-stroke-width: 1px;
 }
