@@ -138,6 +138,9 @@
                         </Label>
                      </children>
                   </Group>
+                  <Line endX="1050.0" endY="99.20000457763672" layoutY="237.0" startY="100.0" />
+                  <Line endX="1050.0" endY="99.20000457763672" layoutY="5.0" startY="100.0" />
+                  <Line endX="1050.0" endY="99.20000457763672" layoutY="121.0" startY="100.0" />
                </children>
             </Pane>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: green;">

@@ -19,7 +19,7 @@ import java.util.List;
 public class RaceSceneController {
     private ParallelTransition pt = new ParallelTransition();
 
-    // TODO: Set positions for transitions, animate wheels separately, create slideshow
+    // TODO: Animate wheels separately, create slideshow
     @FXML
     private void initialize() {
         RacecarModel redCar = new RacecarModel(12, "Ferrari", Color.RED);
@@ -34,6 +34,11 @@ public class RaceSceneController {
         TranslateTransition blueCarTransition = new TranslateTransition(Duration.seconds(blueCar.getAnimationTime()), getBlueCar());
         TranslateTransition yellowCarTransition = new TranslateTransition(Duration.seconds(yellowCar.getAnimationTime()), getYellowCar());
         TranslateTransition greenCarTransition = new TranslateTransition(Duration.seconds(greenCar.getAnimationTime()), getGreenCar());
+
+        redCarTransition.setToX(828);
+        blueCarTransition.setToX(828);
+        yellowCarTransition.setToX(828);
+        greenCarTransition.setToX(828);
 
         pt.getChildren().addAll(redCarTransition, blueCarTransition, yellowCarTransition, greenCarTransition);
     }
