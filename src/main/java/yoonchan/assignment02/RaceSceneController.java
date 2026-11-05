@@ -16,7 +16,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class RaceController {
+public class RaceSceneController {
     private ParallelTransition pt = new ParallelTransition();
 
     // TODO: Set positions for transitions, animate wheels separately, create slideshow
