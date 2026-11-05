@@ -47,6 +47,10 @@
     -fx-background-radius: 20px;
 }
 
+.slider .thumb {
+    -fx-background-color: #0088ff;
+}
+
 .slider .axis .axis-tick-mark {
     -fx-stroke: #0088ff; /* Color of minor/major tick lines */
     -fx-stroke-width: 1px;

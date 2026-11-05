@@ -60,7 +60,10 @@
                                <!-- Front wheel -->
                                <Circle centerX="160" centerY="82" fill="#212121" radius="18" />
                                <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7" />
-                        <Label layoutX="97.0" layoutY="55.0" style="-fx-background-color: white;" text="Label" />
+                        <Label layoutX="97.0" layoutY="54.0" style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;" text="12">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding></Label>
                            </children>
                        </Group>
                   <Group fx:id="blueCar" layoutY="115.0">
@@ -80,6 +83,11 @@
                         <Circle centerX="60" centerY="82" fill="#bdbdbd" radius="7" />
                         <Circle centerX="160" centerY="82" fill="#212121" radius="18" />
                         <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7" />
+                        <Label layoutX="98.0" layoutY="54.0" style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;" text="43">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </Label>
                      </children>
                   </Group>
                   <Group fx:id="yellowCar" layoutY="230.0">
@@ -99,6 +107,11 @@
                         <Circle centerX="60" centerY="82" fill="#bdbdbd" radius="7" />
                         <Circle centerX="160" centerY="82" fill="#212121" radius="18" />
                         <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7" />
+                        <Label alignment="CENTER" layoutX="96.0" layoutY="55.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;" text="2" textAlignment="CENTER">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </Label>
                      </children>
                   </Group>
                   <Group fx:id="greenCar" layoutY="345.0">
@@ -118,6 +131,11 @@
                         <Circle centerX="60" centerY="82" fill="#bdbdbd" radius="7" />
                         <Circle centerX="160" centerY="82" fill="#212121" radius="18" />
                         <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7" />
+                        <Label layoutX="97.0" layoutY="54.0" style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;" text="98">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </Label>
                      </children>
                   </Group>
                </children>
