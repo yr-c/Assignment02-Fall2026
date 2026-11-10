@@ -1,13 +1,17 @@
 package yoonchan.assignment02;
 
+import javafx.animation.Interpolator;
 import javafx.animation.ParallelTransition;
+import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.util.Duration;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,59 +21,63 @@ import java.util.List;
 @Getter
 @Setter
 public class RaceSceneController {
-    private ParallelTransition pt = new ParallelTransition();
+    private static final double FINISH_LINE_X = 828.0;
+    private static final int TIRE_ROTATIONS = 5;
 
-    // TODO: Animate wheels separately, create slideshow
-    @FXML
-    private void initialize() {
-        RacecarModel redCar = new RacecarModel(12, "Ferrari", Color.RED);
-        RacecarModel blueCar = new RacecarModel(43, "BMW", Color.BLUE);
-        RacecarModel yellowCar = new RacecarModel(2, "Chevrolet", Color.YELLOW);
-        RacecarModel greenCar = new RacecarModel(98, "Audi", Color.GREEN);
-
-        RaceManager raceManager = new RaceManager(List.of(redCar, blueCar, yellowCar, greenCar));
-        raceManager.initRace();
-
-        TranslateTransition redCarTransition = new TranslateTransition(Duration.seconds(redCar.getAnimationTime()), getRedCar());
-        TranslateTransition blueCarTransition = new TranslateTransition(Duration.seconds(blueCar.getAnimationTime()), getBlueCar());
-        TranslateTransition yellowCarTransition = new TranslateTransition(Duration.seconds(yellowCar.getAnimationTime()), getYellowCar());
-        TranslateTransition greenCarTransition = new TranslateTransition(Duration.seconds(greenCar.getAnimationTime()), getGreenCar());
-
-        redCarTransition.setToX(828);
-        blueCarTransition.setToX(828);
-        yellowCarTransition.setToX(828);
-        greenCarTransition.setToX(828);
-
-        pt.getChildren().addAll(redCarTransition, blueCarTransition, yellowCarTransition, greenCarTransition);
-
-        speedSlider.valueProperty().addListener((ov, oldVal, newVal) -> {
-            pt.setRate(newVal.doubleValue());
-        });
-    }
+    private final ParallelTransition pt = new ParallelTransition();
 
     @FXML
-    private Group redCar;
-
+    private Group redCar, blueCar, yellowCar, greenCar;
     @FXML
-    private Group blueCar;
-
+    private Line redCarFrontTire, redCarBackTire;
     @FXML
-    private Group yellowCar;
-
+    private Line blueCarFrontTire, blueCarBackTire;
     @FXML
-    private Group greenCar;
-
+    private Line yellowCarFrontTire, yellowCarBackTire;
     @FXML
-    private Button pauseButton;
-
+    private Line greenCarFrontTire, greenCarBackTire;
     @FXML
-    private Button resetButton;
-
+    private Button startButton, pauseButton, resetButton;
     @FXML
     private Slider speedSlider;
 
     @FXML
-    private Button startButton;
+    private void initialize() {
+        RacecarModel redModel = new RacecarModel(12, "Ferrari", Color.RED);
+        RacecarModel blueModel = new RacecarModel(43, "BMW", Color.BLUE);
+        RacecarModel yellowModel = new RacecarModel(2, "Chevrolet", Color.YELLOW);
+        RacecarModel greenModel = new RacecarModel(98, "Audi", Color.GREEN);
+
+        RaceManager raceManager = new RaceManager(List.of(redModel, blueModel, yellowModel, greenModel));
+        raceManager.initRace();
+
+        registerCarAnimation(redModel, redCar, redCarFrontTire, redCarBackTire);
+        registerCarAnimation(blueModel, blueCar, blueCarFrontTire, blueCarBackTire);
+        registerCarAnimation(yellowModel, yellowCar, yellowCarFrontTire, yellowCarBackTire);
+        registerCarAnimation(greenModel, greenCar, greenCarFrontTire, greenCarBackTire);
+
+        speedSlider.valueProperty().addListener((ov, oldVal, newVal) -> pt.setRate(newVal.doubleValue()));
+    }
+
+    private void registerCarAnimation(RacecarModel model, Group carGroup, Node frontTire, Node backTire) {
+        Duration duration = Duration.seconds(model.getAnimationTime());
+
+        TranslateTransition move = new TranslateTransition(duration, carGroup);
+        move.setToX(FINISH_LINE_X);
+
+        RotateTransition frontSpin = createTireSpin(duration, frontTire);
+        RotateTransition backSpin = createTireSpin(duration, backTire);
+
+        pt.getChildren().addAll(move, frontSpin, backSpin);
+    }
+
+    private RotateTransition createTireSpin(Duration totalDuration, Node tire) {
+        RotateTransition spin = new RotateTransition(totalDuration.divide(TIRE_ROTATIONS), tire);
+        spin.setByAngle(360);
+        spin.setCycleCount(TIRE_ROTATIONS);
+        spin.setInterpolator(Interpolator.LINEAR);
+        return spin;
+    }
 
     @FXML
     void pauseRace(ActionEvent event) {
@@ -79,10 +87,17 @@ public class RaceSceneController {
     @FXML
     void resetRace(ActionEvent event) {
         pt.stop();
-        redCar.setTranslateX(0);
-        blueCar.setTranslateX(0);
-        yellowCar.setTranslateX(0);
-        greenCar.setTranslateX(0);
+
+        for (Group car : List.of(redCar, blueCar, yellowCar, greenCar)) {
+            car.setTranslateX(0);
+        }
+        for (Line tire : List.of(
+                redCarFrontTire, redCarBackTire,
+                blueCarFrontTire, blueCarBackTire,
+                yellowCarFrontTire, yellowCarBackTire,
+                greenCarFrontTire, greenCarBackTire)) {
+            tire.setRotate(0);
+        }
     }
 
     @FXML

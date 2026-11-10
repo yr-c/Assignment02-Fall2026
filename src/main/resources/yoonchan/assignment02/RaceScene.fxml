@@ -64,6 +64,8 @@
                            <padding>
                               <Insets left="5.0" right="5.0" />
                            </padding></Label>
+                        <Line fx:id="redCarBackTire" endX="67.19998931884766" endY="75.20000457763672" startX="53.00000762939453" startY="88.99999237060547" />
+                        <Line fx:id="redCarFrontTire" endX="158.80001831054688" endY="77.20000457763672" layoutX="10.0" layoutY="10.0" startX="140.39999389648438" startY="67.5999984741211" />
                            </children>
                        </Group>
                   <Group fx:id="blueCar" layoutY="115.0">
@@ -88,6 +90,8 @@
                               <Insets left="5.0" right="5.0" />
                            </padding>
                         </Label>
+                        <Line fx:id="blueCarBackTire" endX="67.19998931884766" endY="75.20000457763672" startX="53.00000762939453" startY="88.99999237060547" />
+                        <Line fx:id="blueCarFrontTire" endX="167.00003051757812" endY="88.99998474121094" startX="153.60000610351562" startY="73.80000305175781" />
                      </children>
                   </Group>
                   <Group fx:id="yellowCar" layoutY="230.0">
@@ -107,11 +111,13 @@
                         <Circle centerX="60" centerY="82" fill="#bdbdbd" radius="7" />
                         <Circle centerX="160" centerY="82" fill="#212121" radius="18" />
                         <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7" />
-                        <Label alignment="CENTER" layoutX="96.0" layoutY="55.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;" text="2" textAlignment="CENTER">
+                        <Label alignment="CENTER" layoutX="98.0" layoutY="54.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;" text="2" textAlignment="CENTER">
                            <padding>
                               <Insets left="5.0" right="5.0" />
                            </padding>
                         </Label>
+                        <Line fx:id="yellowCarBackTire" endX="67.19998931884766" endY="75.20000457763672" startX="53.00000762939453" startY="88.99999237060547" />
+                        <Line fx:id="yellowCarFrontTire" endX="167.00003051757812" endY="88.99998474121094" startX="153.60000610351562" startY="73.80000305175781" />
                      </children>
                   </Group>
                   <Group fx:id="greenCar" layoutY="345.0">
@@ -136,6 +142,8 @@
                               <Insets left="5.0" right="5.0" />
                            </padding>
                         </Label>
+                        <Line fx:id="greenCarBackTire" endX="67.19998931884766" endY="75.20000457763672" startX="53.00000762939453" startY="88.99999237060547" />
+                        <Line fx:id="greenCarFrontTire" endX="167.00003051757812" endY="88.99998474121094" startX="153.60000610351562" startY="73.80000305175781" />
                      </children>
                   </Group>
                   <Line endX="1050.0" endY="99.20000457763672" layoutY="237.0" startY="100.0" />
@@ -187,7 +195,7 @@
                   <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                </padding>
                <children>
-                  <Label text="Label" />
+                  <Label text="The race is ready!" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Final results:" />
                   <GridPane hgap="4.0" vgap="2.0">
                     <columnConstraints>
