@@ -2,6 +2,7 @@ package yoonchan.assignment02;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.scene.text.Text;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class RaceManager {
     public RaceManager() {
         this.cars = new ArrayList<>();
         this.raceState = new SimpleObjectProperty<>(RaceState.READY);
-        this.podium = new ArrayList<>(Collections.nCopies(5, null));
+        this.podium = new ArrayList<>();
     }
 
     // Standard JavaFX Property Accessors
@@ -56,12 +57,15 @@ public class RaceManager {
         Random rand = new Random();
         List<Integer> positions = new ArrayList<>(List.of(1, 2, 3, 4));
 
+        podium.clear();
+        podium.addAll(Collections.nCopies(cars.size(), null));
+
         for (RacecarModel car : cars) {
             int randomIndex = rand.nextInt(positions.size());
             int actualPosition = positions.remove(randomIndex);
 
             car.setFinishPosition(actualPosition);
-            podium.set(actualPosition - 1, car); // Use .set() instead of .add()
+            podium.set(actualPosition - 1, car);
         }
     }
 
@@ -86,6 +90,31 @@ public class RaceManager {
      */
     public void registerCarModel(RacecarModel car) {
         cars.add(car);
+    }
+
+    /**
+     * Updates the podium's placement texts using the sorted podium list.
+     *
+     * @param placementTexts The Text nodes to be updated (ordered 1st to 4th).
+     */
+    public void updatePodiumPlacements(List<Text> placementTexts) {
+        for (int i = 0; i < podium.size(); i++) {
+            RacecarModel car = podium.get(i);
+            if (car != null && i < placementTexts.size()) {
+                placementTexts.get(i).setText(String.format("%s: #%d", car.getCarType(), car.getNumber()));
+            }
+        }
+    }
+
+    /**
+     * Resets the podium's placement texts.
+     *
+     * @param placementTexts The Text nodes to be reset.
+     */
+    public void resetPodiumPlacements(List<Text> placementTexts) {
+        for (Text placementText : placementTexts) {
+            placementText.setText(" --- ");
+        }
     }
 
     public enum RaceState {

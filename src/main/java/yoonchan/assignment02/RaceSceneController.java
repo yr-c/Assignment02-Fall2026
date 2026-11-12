@@ -48,7 +48,7 @@ public class RaceSceneController {
     @FXML
     private Slider speedSlider;
     @FXML
-    private Text firstPlaceText, secondPlaceText, thirdPlaceText, forthPlaceText;
+    private Text firstPlaceText, secondPlaceText, thirdPlaceText, fourthPlaceText;
 
     @FXML
     private void initialize() {
@@ -75,8 +75,9 @@ public class RaceSceneController {
                 () -> "The race is " + rm.getRaceState().toString() + "!", rm.raceStateProperty())
         );
 
-        pt.onFinishedProperty().addListener((ov, oldVal, newVal) -> {
+        pt.setOnFinished(e -> {
             rm.setRaceState(RaceManager.RaceState.FINISHED);
+            rm.updatePodiumPlacements(List.of(firstPlaceText, secondPlaceText, thirdPlaceText, fourthPlaceText));
         });
     }
 
@@ -121,6 +122,7 @@ public class RaceSceneController {
     @FXML
     void pauseRace() {
         pt.pause();
+        startButton.setText("Continue");
         rm.setRaceState(RaceManager.RaceState.PAUSED);
     }
 
@@ -130,6 +132,7 @@ public class RaceSceneController {
     @FXML
     void resetRace() {
         pt.stop();
+        startButton.setText("Start");
 
         for (Group car : List.of(redCar, blueCar, yellowCar, greenCar)) {
             car.setTranslateX(0);
@@ -143,6 +146,7 @@ public class RaceSceneController {
         }
 
         rm.setRaceState(RaceManager.RaceState.READY);
+        rm.resetPodiumPlacements(List.of(firstPlaceText, secondPlaceText, thirdPlaceText, fourthPlaceText));
     }
 
     /**
@@ -151,6 +155,7 @@ public class RaceSceneController {
     @FXML
     void startRace() {
         pt.play();
+        startButton.setText("Start");
         rm.setRaceState(RaceManager.RaceState.LIVE);
     }
 }
