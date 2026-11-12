@@ -11,8 +11,8 @@ import java.util.Random;
 public class RaceManager {
     @Setter
     private RaceState raceState;
-    private List<RacecarModel> cars;
-    private RacecarModel[] podium;
+    private final List<RacecarModel> cars;
+    private final RacecarModel[] podium;
     private static final List<Double[]> timePool = List.of(
             new Double[]{5d, 5.5},
             new Double[]{5.5, 7d},
