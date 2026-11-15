@@ -4,6 +4,7 @@
 
 .button {
     -fx-background-radius: 10px;
+    -fx-font-family: Outfit;
     -fx-font-size: 20;
     -fx-font-weight: bold;
 }
@@ -40,6 +41,12 @@
 #reset-button:hover {
     -fx-background-color: #870000;
     -fx-cursor: hand
+}
+
+#grid-cell {
+    -fx-border-color: #41a6fd;
+    -fx-border-width: 2;
+    -fx-border-radius: 5px;
 }
 
 .slider {
