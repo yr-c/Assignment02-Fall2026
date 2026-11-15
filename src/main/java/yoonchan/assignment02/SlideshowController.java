@@ -16,6 +16,8 @@ public class SlideshowController {
     private final Image[] slideshowImages = slideshowManager.getSlideshowImages();
     private int slideshowIdx = 0;
 
+    private final SoundEffectHelper slideShowMusicPlayer = new SoundEffectHelper("sounds/slideshow_music.mp3");
+
     @FXML
     private ImageView slide;
 
@@ -40,13 +42,16 @@ public class SlideshowController {
         slideshowTimeline.setCycleCount(slideshowImages.length);
         slideshowTimeline.setOnFinished(event -> transitionToRaceScene());
         slideshowTimeline.play();
+        slideShowMusicPlayer.play();
     }
 
     private void transitionToRaceScene() {
+        slideShowMusicPlayer.stop();
+
         try {
-            App.setRoot("RaceScene");
+            App.setRoot("Race");
         } catch (IOException e) {
-            throw new RuntimeException("Failed to load RaceScene.fxml", e);
+            throw new RuntimeException("Failed to load Race.fxml", e);
         }
     }
 }

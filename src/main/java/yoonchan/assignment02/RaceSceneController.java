@@ -4,9 +4,7 @@ import javafx.animation.Interpolator;
 import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
-import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Node;
@@ -30,6 +28,9 @@ public class RaceSceneController {
     private static final int TIRE_ROTATIONS = 5;
 
     private final ParallelTransition pt = new ParallelTransition();
+
+    private final SoundEffectHelper carEngineSoundPlayer = new SoundEffectHelper("sounds/car_engine.mp3");
+    private final SoundEffectHelper buttonSoundPlayer = new SoundEffectHelper("sounds/button_click.mp3");
 
     @FXML
     private Group redCar, blueCar, yellowCar, greenCar;
@@ -76,6 +77,7 @@ public class RaceSceneController {
         );
 
         pt.setOnFinished(e -> {
+            carEngineSoundPlayer.stop();
             rm.setRaceState(RaceManager.RaceState.FINISHED);
             rm.updatePodiumPlacements(List.of(firstPlaceText, secondPlaceText, thirdPlaceText, fourthPlaceText));
         });
@@ -122,6 +124,8 @@ public class RaceSceneController {
     @FXML
     void pauseRace() {
         pt.pause();
+        buttonSoundPlayer.play();
+        carEngineSoundPlayer.stop();
         startButton.setText("Continue");
         rm.setRaceState(RaceManager.RaceState.PAUSED);
     }
@@ -132,6 +136,8 @@ public class RaceSceneController {
     @FXML
     void resetRace() {
         pt.stop();
+        buttonSoundPlayer.play();
+        carEngineSoundPlayer.stop();
         startButton.setText("Start");
 
         for (Group car : List.of(redCar, blueCar, yellowCar, greenCar)) {
@@ -155,6 +161,8 @@ public class RaceSceneController {
     @FXML
     void startRace() {
         pt.play();
+        buttonSoundPlayer.play();
+        carEngineSoundPlayer.play();
         startButton.setText("Start");
         rm.setRaceState(RaceManager.RaceState.LIVE);
     }

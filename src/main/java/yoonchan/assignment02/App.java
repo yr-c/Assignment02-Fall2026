@@ -23,7 +23,7 @@ public class App extends Application {
         Font.loadFont(App.class.getResourceAsStream("fonts/Outfit-Light.ttf"), 16);
         Font.loadFont(App.class.getResourceAsStream("fonts/Outfit-Regular.ttf"), 16);
 
-        scene = new Scene(loadFXML("RaceScene"), 1280, 720);
+        scene = new Scene(loadFXML("Slideshow"), 1280, 720);
         stage.setScene(scene);
         stage.show();
     }
