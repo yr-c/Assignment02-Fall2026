@@ -22,7 +22,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class RaceSceneController {
+public class RaceController {
     private final RaceManager rm = new RaceManager();
     private static final double FINISH_LINE_X = 828.0;
     private static final int TIRE_ROTATIONS = 5;

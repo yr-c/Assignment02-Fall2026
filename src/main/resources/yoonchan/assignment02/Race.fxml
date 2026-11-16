@@ -19,234 +19,309 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yoonchan.assignment02.RaceSceneController">
-   <children>
-       <HBox alignment="CENTER" prefHeight="460.0" prefWidth="1240.0" spacing="5.0" styleClass="major-container" stylesheets="@styles.css">
-           <children>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: green;">
-               <children>
-                  <Text fill="WHITE" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-font-family: Outfit;" text="START" textAlignment="CENTER">
-                     <font>
-                        <Font size="28.0" />
-                     </font>
-                  </Text>
-               </children>
-            </VBox>
-            <Pane prefHeight="600.0" prefWidth="1050.0">
-               <children>
-                       <Group fx:id="redCar">
-                           <children>
-                               <!-- Lower body -->
-                               <Polygon fill="#e53935" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82" stroke="#212121" strokeWidth="1" />
-                               <!-- Cabin -->
-                               <Polygon fill="#e53935" points="65.0, 50.0, 88.0, 2.0, 138.0, 2.0, 162.0, 50.0" stroke="#212121" strokeWidth="1" />
-                               <!-- Windows -->
-                               <Polygon fill="#b3e5fc" points="90, 8, 112, 8, 112, 46, 72, 46" />
-                               <Polygon fill="#b3e5fc" points="118.0, 8.0, 136.0, 8.0, 149.59999084472656, 45.99999237060547, 118.0, 46.0" />
-                               <!-- Side mirror -->
-                               <Circle centerX="162" centerY="44" fill="#e53935" radius="4" stroke="#212121" strokeWidth="1" />
-                               <!-- Door seam and handle -->
-                               <Line endX="112" endY="80" startX="112" startY="52" stroke="#212121" strokeWidth="1" />
-                               <Rectangle fill="#212121" height="4" width="12" x="120" y="56" />
-                               <!-- Headlight and taillight -->
-                               <Circle centerX="202" centerY="62" fill="#ffeb3b" radius="5" />
-                               <Circle centerX="16" centerY="62" fill="#d32f2f" radius="5" />
-                               <!-- Bumpers -->
-                               <Rectangle fill="#616161" height="10" width="10" x="206" y="74" />
-                               <Rectangle fill="#616161" height="10" width="10" x="4" y="74" />
-                               <!-- Rear wheel -->
-                               <Circle centerX="60" centerY="82" fill="#212121" radius="18" />
-                               <Circle centerX="60" centerY="82" fill="#bdbdbd" radius="7" />
-                               <!-- Front wheel -->
-                               <Circle centerX="160" centerY="82" fill="#212121" radius="18" />
-                               <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7" />
-                        <Label layoutX="97.0" layoutY="54.0" style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;" text="12">
-                           <padding>
-                              <Insets left="5.0" right="5.0" />
-                           </padding></Label>
-                        <Line fx:id="redCarBackTire" endX="67.19998931884766" endY="75.20000457763672" startX="53.00000762939453" startY="88.99999237060547" />
-                        <Line fx:id="redCarFrontTire" endX="158.80001831054688" endY="77.20000457763672" layoutX="10.0" layoutY="10.0" startX="140.39999389648438" startY="67.5999984741211" />
-                           </children>
-                       </Group>
-                  <Group fx:id="blueCar" layoutY="115.0">
-                     <children>
-                        <Polygon fill="#3674e3" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82" stroke="#212121" strokeWidth="1" />
-                        <Polygon fill="#3674e3" points="65, 50, 88, 2, 138, 2, 162, 50" stroke="#212121" strokeWidth="1" />
-                        <Polygon fill="#b3e5fc" points="90, 8, 112, 8, 112, 46, 72, 46" />
-                        <Polygon fill="#b3e5fc" points="118.0, 8.0, 136.0, 8.0, 149.59999084472656, 45.99999237060547, 118.0, 46.0" />
-                        <Circle centerX="162" centerY="44" fill="#3674e3" radius="4" stroke="#212121" strokeWidth="1" />
-                        <Line endX="112" endY="80" startX="112" startY="52" stroke="#212121" strokeWidth="1" />
-                        <Rectangle fill="#212121" height="4" width="12" x="120" y="56" />
-                        <Circle centerX="202" centerY="62" fill="#ffeb3b" radius="5" />
-                        <Circle centerX="16" centerY="62" fill="#d32f2f" radius="5" />
-                        <Rectangle fill="#616161" height="10" width="10" x="206" y="74" />
-                        <Rectangle fill="#616161" height="10" width="10" x="4" y="74" />
-                        <Circle centerX="60" centerY="82" fill="#212121" radius="18" />
-                        <Circle centerX="60" centerY="82" fill="#bdbdbd" radius="7" />
-                        <Circle centerX="160" centerY="82" fill="#212121" radius="18" />
-                        <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7" />
-                        <Label layoutX="98.0" layoutY="54.0" style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;" text="43">
-                           <padding>
-                              <Insets left="5.0" right="5.0" />
-                           </padding>
-                        </Label>
-                        <Line fx:id="blueCarBackTire" endX="67.19998931884766" endY="75.20000457763672" startX="53.00000762939453" startY="88.99999237060547" />
-                        <Line fx:id="blueCarFrontTire" endX="167.00003051757812" endY="88.99998474121094" startX="153.60000610351562" startY="73.80000305175781" />
-                     </children>
-                  </Group>
-                  <Group fx:id="yellowCar" layoutY="230.0">
-                     <children>
-                        <Polygon fill="#ffff14" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82" stroke="#212121" strokeWidth="1" />
-                        <Polygon fill="#ffff14" points="65, 50, 88, 2, 138, 2, 162, 50" stroke="#212121" strokeWidth="1" />
-                        <Polygon fill="#b3e5fc" points="90, 8, 112, 8, 112, 46, 72, 46" />
-                        <Polygon fill="#b3e5fc" points="118.0, 8.0, 136.0, 8.0, 149.59999084472656, 45.99999237060547, 118.0, 46.0" />
-                        <Circle centerX="162" centerY="44" fill="#ffff14" radius="4" stroke="#212121" strokeWidth="1" />
-                        <Line endX="112" endY="80" startX="112" startY="52" stroke="#212121" strokeWidth="1" />
-                        <Rectangle fill="#212121" height="4" width="12" x="120" y="56" />
-                        <Circle centerX="202" centerY="62" fill="#ffeb3b" radius="5" />
-                        <Circle centerX="16" centerY="62" fill="#d32f2f" radius="5" />
-                        <Rectangle fill="#616161" height="10" width="10" x="206" y="74" />
-                        <Rectangle fill="#616161" height="10" width="10" x="4" y="74" />
-                        <Circle centerX="60" centerY="82" fill="#212121" radius="18" />
-                        <Circle centerX="60" centerY="82" fill="#bdbdbd" radius="7" />
-                        <Circle centerX="160" centerY="82" fill="#212121" radius="18" />
-                        <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7" />
-                        <Label alignment="CENTER" layoutX="98.0" layoutY="54.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;" text="2" textAlignment="CENTER">
-                           <padding>
-                              <Insets left="5.0" right="5.0" />
-                           </padding>
-                        </Label>
-                        <Line fx:id="yellowCarBackTire" endX="67.19998931884766" endY="75.20000457763672" startX="53.00000762939453" startY="88.99999237060547" />
-                        <Line fx:id="yellowCarFrontTire" endX="167.00003051757812" endY="88.99998474121094" startX="153.60000610351562" startY="73.80000305175781" />
-                     </children>
-                  </Group>
-                  <Group fx:id="greenCar" layoutY="345.0">
-                     <children>
-                        <Polygon fill="GREEN" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82" stroke="#212121" strokeWidth="1" />
-                        <Polygon fill="GREEN" points="65, 50, 88, 2, 138, 2, 162, 50" stroke="#212121" strokeWidth="1" />
-                        <Polygon fill="#b3e5fc" points="90, 8, 112, 8, 112, 46, 72, 46" />
-                        <Polygon fill="#b3e5fc" points="118.0, 8.0, 136.0, 8.0, 149.59999084472656, 45.99999237060547, 118.0, 46.0" />
-                        <Circle centerX="162" centerY="44" fill="GREEN" radius="4" stroke="#212121" strokeWidth="1" />
-                        <Line endX="112" endY="80" startX="112" startY="52" stroke="#212121" strokeWidth="1" />
-                        <Rectangle fill="#212121" height="4" width="12" x="120" y="56" />
-                        <Circle centerX="202" centerY="62" fill="#ffeb3b" radius="5" />
-                        <Circle centerX="16" centerY="62" fill="#d32f2f" radius="5" />
-                        <Rectangle fill="#616161" height="10" width="10" x="206" y="74" />
-                        <Rectangle fill="#616161" height="10" width="10" x="4" y="74" />
-                        <Circle centerX="60" centerY="82" fill="#212121" radius="18" />
-                        <Circle centerX="60" centerY="82" fill="#bdbdbd" radius="7" />
-                        <Circle centerX="160" centerY="82" fill="#212121" radius="18" />
-                        <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7" />
-                        <Label layoutX="97.0" layoutY="54.0" style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;" text="98">
-                           <padding>
-                              <Insets left="5.0" right="5.0" />
-                           </padding>
-                        </Label>
-                        <Line fx:id="greenCarBackTire" endX="67.19998931884766" endY="75.20000457763672" startX="53.00000762939453" startY="88.99999237060547" />
-                        <Line fx:id="greenCarFrontTire" endX="167.00003051757812" endY="88.99998474121094" startX="153.60000610351562" startY="73.80000305175781" />
-                     </children>
-                  </Group>
-                  <Line endX="1050.0" endY="99.20000457763672" layoutY="237.0" startY="100.0" />
-                  <Line endX="1050.0" endY="99.20000457763672" layoutY="5.0" startY="100.0" />
-                  <Line endX="1050.0" endY="99.20000457763672" layoutY="121.0" startY="100.0" />
-               </children>
-            </Pane>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: green;">
-               <children>
-                  <Text fill="WHITE" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-font-family: Outfit;" text="FINISH" textAlignment="CENTER">
-                     <font>
-                        <Font size="28.0" />
-                     </font>
-                  </Text>
-               </children>
-            </VBox>
-           </children>
-       </HBox>
-      <GridPane alignment="BASELINE_CENTER" hgap="20.0" VBox.vgrow="ALWAYS">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <VBox alignment="TOP_CENTER" spacing="10.0" styleClass="major-container" stylesheets="@styles.css">
-               <children>
-                  <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" spacing="50.0">
-                     <children>
-                      <Button id="start-button" fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#startRace" prefHeight="100.0" prefWidth="200.0" style="-fx-font-family: Outfit;" stylesheets="@styles.css" text="Start" />
-                        <Button id="pause-button" fx:id="pauseButton" alignment="CENTER" mnemonicParsing="false" onAction="#pauseRace" prefHeight="100.0" prefWidth="200.0" style="-fx-font-family: Outfit;" stylesheets="@styles.css" text="Pause" />
-                        <Button id="reset-button" fx:id="resetButton" alignment="CENTER" mnemonicParsing="false" onAction="#resetRace" prefHeight="100.0" prefWidth="200.0" style="-fx-font-family: Outfit;" stylesheets="@styles.css" text="Reset" />
-                     </children>
-                  </HBox>
-                  <Label style="-fx-font-family: Outfit; -fx-font-size: 16;" text="Simulation speed:" />
-                  <Slider fx:id="speedSlider" blockIncrement="0.25" majorTickUnit="0.5" max="2.5" min="0.5" minorTickCount="1" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0">
-                     <padding>
-                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-                     </padding></Slider>
-               </children>
-               <padding>
-                  <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-               </padding>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="major-container" stylesheets="@styles.css" GridPane.columnIndex="1">
-               <padding>
-                  <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-               </padding>
-               <children>
-                  <Label fx:id="statusText" style="-fx-font-weight: bold; -fx-font-family: Outfit; -fx-font-size: 18;" text="The race is ready!" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14; -fx-font-family: Outfit;" text="Final results:" />
-                  <GridPane hgap="4.0" vgap="2.0">
-                    <columnConstraints>
-                        <ColumnConstraints maxWidth="242.59993591308594" minWidth="10.0" />
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="515.2000450134277" minWidth="10.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
-                        <VBox id="grid-cell" alignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <children>
-                              <Text fx:id="firstPlaceText" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Outfit;" text="---" />
-                           </children>
-                        </VBox>
-                        <VBox id="grid-cell" alignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                           <children>
-                              <Text fx:id="secondPlaceText" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Outfit;" text="---" />
-                           </children>
-                        </VBox>
-                        <VBox id="grid-cell" alignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                           <children>
-                              <Text fx:id="thirdPlaceText" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Outfit;" text="---" />
-                           </children>
-                        </VBox>
-                        <VBox id="grid-cell" alignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                           <children>
-                              <Text fx:id="fourthPlaceText" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Outfit;" text="---" />
-                           </children>
-                        </VBox>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
-                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
-                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3" />
-                        <Label alignment="CENTER" style="-fx-label-padding: 5; -fx-font-weight: bold; -fx-background-radius: 10%; -fx-background-color: gold; -fx-min-width: 50;" text="1" textAlignment="CENTER" />
-                        <Label alignment="CENTER" style="-fx-label-padding: 5; -fx-font-weight: bold; -fx-background-radius: 10%; -fx-background-color: silver; -fx-min-width: 50;" text="2" textAlignment="CENTER" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" style="-fx-label-padding: 5; -fx-font-weight: bold; -fx-background-radius: 10%; -fx-background-color: #CD7F32; -fx-min-width: 50;" text="3" textAlignment="CENTER" GridPane.rowIndex="2" />
-                        <Label alignment="CENTER" style="-fx-label-padding: 5; -fx-font-weight: bold; -fx-background-radius: 10%; -fx-background-color: #5cabff; -fx-min-width: 50;" text="4" textAlignment="CENTER" GridPane.rowIndex="3" />
-                     </children>
-                     <padding>
-                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                     </padding>
-                  </GridPane>
-               </children></VBox>
-         </children>
-      </GridPane>
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns="http://javafx.com/javafx/26"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="yoonchan.assignment02.RaceController">
+    <children>
+        <HBox alignment="CENTER" prefHeight="460.0" prefWidth="1240.0" spacing="5.0" styleClass="major-container"
+              stylesheets="@styles.css">
+            <children>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: green;">
+                    <children>
+                        <Text fill="WHITE" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                              style="-fx-font-weight: bold; -fx-font-family: Outfit;" text="START"
+                              textAlignment="CENTER">
+                            <font>
+                                <Font size="28.0"/>
+                            </font>
+                        </Text>
+                    </children>
+                </VBox>
+                <Pane prefHeight="600.0" prefWidth="1050.0">
+                    <children>
+                        <Group fx:id="redCar">
+                            <children>
+                                <!-- Lower body -->
+                                <Polygon fill="#e53935" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82"
+                                         stroke="#212121" strokeWidth="1"/>
+                                <!-- Cabin -->
+                                <Polygon fill="#e53935" points="65.0, 50.0, 88.0, 2.0, 138.0, 2.0, 162.0, 50.0"
+                                         stroke="#212121" strokeWidth="1"/>
+                                <!-- Windows -->
+                                <Polygon fill="#b3e5fc" points="90, 8, 112, 8, 112, 46, 72, 46"/>
+                                <Polygon fill="#b3e5fc"
+                                         points="118.0, 8.0, 136.0, 8.0, 149.59999084472656, 45.99999237060547, 118.0, 46.0"/>
+                                <!-- Side mirror -->
+                                <Circle centerX="162" centerY="44" fill="#e53935" radius="4" stroke="#212121"
+                                        strokeWidth="1"/>
+                                <!-- Door seam and handle -->
+                                <Line endX="112" endY="80" startX="112" startY="52" stroke="#212121" strokeWidth="1"/>
+                                <Rectangle fill="#212121" height="4" width="12" x="120" y="56"/>
+                                <!-- Headlight and taillight -->
+                                <Circle centerX="202" centerY="62" fill="#ffeb3b" radius="5"/>
+                                <Circle centerX="16" centerY="62" fill="#d32f2f" radius="5"/>
+                                <!-- Bumpers -->
+                                <Rectangle fill="#616161" height="10" width="10" x="206" y="74"/>
+                                <Rectangle fill="#616161" height="10" width="10" x="4" y="74"/>
+                                <!-- Rear wheel -->
+                                <Circle centerX="60" centerY="82" fill="#212121" radius="18"/>
+                                <Circle centerX="60" centerY="82" fill="#bdbdbd" radius="7"/>
+                                <!-- Front wheel -->
+                                <Circle centerX="160" centerY="82" fill="#212121" radius="18"/>
+                                <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7"/>
+                                <Label layoutX="97.0" layoutY="54.0"
+                                       style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;"
+                                       text="12">
+                                    <padding>
+                                        <Insets left="5.0" right="5.0"/>
+                                    </padding>
+                                </Label>
+                                <Line fx:id="redCarBackTire" endX="67.19998931884766" endY="75.20000457763672"
+                                      startX="53.00000762939453" startY="88.99999237060547"/>
+                                <Line fx:id="redCarFrontTire" endX="158.80001831054688" endY="77.20000457763672"
+                                      layoutX="10.0" layoutY="10.0" startX="140.39999389648438"
+                                      startY="67.5999984741211"/>
+                            </children>
+                        </Group>
+                        <Group fx:id="blueCar" layoutY="115.0">
+                            <children>
+                                <Polygon fill="#3674e3" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82"
+                                         stroke="#212121" strokeWidth="1"/>
+                                <Polygon fill="#3674e3" points="65, 50, 88, 2, 138, 2, 162, 50" stroke="#212121"
+                                         strokeWidth="1"/>
+                                <Polygon fill="#b3e5fc" points="90, 8, 112, 8, 112, 46, 72, 46"/>
+                                <Polygon fill="#b3e5fc"
+                                         points="118.0, 8.0, 136.0, 8.0, 149.59999084472656, 45.99999237060547, 118.0, 46.0"/>
+                                <Circle centerX="162" centerY="44" fill="#3674e3" radius="4" stroke="#212121"
+                                        strokeWidth="1"/>
+                                <Line endX="112" endY="80" startX="112" startY="52" stroke="#212121" strokeWidth="1"/>
+                                <Rectangle fill="#212121" height="4" width="12" x="120" y="56"/>
+                                <Circle centerX="202" centerY="62" fill="#ffeb3b" radius="5"/>
+                                <Circle centerX="16" centerY="62" fill="#d32f2f" radius="5"/>
+                                <Rectangle fill="#616161" height="10" width="10" x="206" y="74"/>
+                                <Rectangle fill="#616161" height="10" width="10" x="4" y="74"/>
+                                <Circle centerX="60" centerY="82" fill="#212121" radius="18"/>
+                                <Circle centerX="60" centerY="82" fill="#bdbdbd" radius="7"/>
+                                <Circle centerX="160" centerY="82" fill="#212121" radius="18"/>
+                                <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7"/>
+                                <Label layoutX="98.0" layoutY="54.0"
+                                       style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;"
+                                       text="43">
+                                    <padding>
+                                        <Insets left="5.0" right="5.0"/>
+                                    </padding>
+                                </Label>
+                                <Line fx:id="blueCarBackTire" endX="67.19998931884766" endY="75.20000457763672"
+                                      startX="53.00000762939453" startY="88.99999237060547"/>
+                                <Line fx:id="blueCarFrontTire" endX="167.00003051757812" endY="88.99998474121094"
+                                      startX="153.60000610351562" startY="73.80000305175781"/>
+                            </children>
+                        </Group>
+                        <Group fx:id="yellowCar" layoutY="230.0">
+                            <children>
+                                <Polygon fill="#ffff14" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82"
+                                         stroke="#212121" strokeWidth="1"/>
+                                <Polygon fill="#ffff14" points="65, 50, 88, 2, 138, 2, 162, 50" stroke="#212121"
+                                         strokeWidth="1"/>
+                                <Polygon fill="#b3e5fc" points="90, 8, 112, 8, 112, 46, 72, 46"/>
+                                <Polygon fill="#b3e5fc"
+                                         points="118.0, 8.0, 136.0, 8.0, 149.59999084472656, 45.99999237060547, 118.0, 46.0"/>
+                                <Circle centerX="162" centerY="44" fill="#ffff14" radius="4" stroke="#212121"
+                                        strokeWidth="1"/>
+                                <Line endX="112" endY="80" startX="112" startY="52" stroke="#212121" strokeWidth="1"/>
+                                <Rectangle fill="#212121" height="4" width="12" x="120" y="56"/>
+                                <Circle centerX="202" centerY="62" fill="#ffeb3b" radius="5"/>
+                                <Circle centerX="16" centerY="62" fill="#d32f2f" radius="5"/>
+                                <Rectangle fill="#616161" height="10" width="10" x="206" y="74"/>
+                                <Rectangle fill="#616161" height="10" width="10" x="4" y="74"/>
+                                <Circle centerX="60" centerY="82" fill="#212121" radius="18"/>
+                                <Circle centerX="60" centerY="82" fill="#bdbdbd" radius="7"/>
+                                <Circle centerX="160" centerY="82" fill="#212121" radius="18"/>
+                                <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7"/>
+                                <Label alignment="CENTER" layoutX="98.0" layoutY="54.0" prefHeight="25.0"
+                                       prefWidth="25.0"
+                                       style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;"
+                                       text="2" textAlignment="CENTER">
+                                    <padding>
+                                        <Insets left="5.0" right="5.0"/>
+                                    </padding>
+                                </Label>
+                                <Line fx:id="yellowCarBackTire" endX="67.19998931884766" endY="75.20000457763672"
+                                      startX="53.00000762939453" startY="88.99999237060547"/>
+                                <Line fx:id="yellowCarFrontTire" endX="167.00003051757812" endY="88.99998474121094"
+                                      startX="153.60000610351562" startY="73.80000305175781"/>
+                            </children>
+                        </Group>
+                        <Group fx:id="greenCar" layoutY="345.0">
+                            <children>
+                                <Polygon fill="GREEN" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82"
+                                         stroke="#212121" strokeWidth="1"/>
+                                <Polygon fill="GREEN" points="65, 50, 88, 2, 138, 2, 162, 50" stroke="#212121"
+                                         strokeWidth="1"/>
+                                <Polygon fill="#b3e5fc" points="90, 8, 112, 8, 112, 46, 72, 46"/>
+                                <Polygon fill="#b3e5fc"
+                                         points="118.0, 8.0, 136.0, 8.0, 149.59999084472656, 45.99999237060547, 118.0, 46.0"/>
+                                <Circle centerX="162" centerY="44" fill="GREEN" radius="4" stroke="#212121"
+                                        strokeWidth="1"/>
+                                <Line endX="112" endY="80" startX="112" startY="52" stroke="#212121" strokeWidth="1"/>
+                                <Rectangle fill="#212121" height="4" width="12" x="120" y="56"/>
+                                <Circle centerX="202" centerY="62" fill="#ffeb3b" radius="5"/>
+                                <Circle centerX="16" centerY="62" fill="#d32f2f" radius="5"/>
+                                <Rectangle fill="#616161" height="10" width="10" x="206" y="74"/>
+                                <Rectangle fill="#616161" height="10" width="10" x="4" y="74"/>
+                                <Circle centerX="60" centerY="82" fill="#212121" radius="18"/>
+                                <Circle centerX="60" centerY="82" fill="#bdbdbd" radius="7"/>
+                                <Circle centerX="160" centerY="82" fill="#212121" radius="18"/>
+                                <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7"/>
+                                <Label layoutX="97.0" layoutY="54.0"
+                                       style="-fx-background-color: white; -fx-font-weight: bold; -fx-background-radius: 2px; -fx-font-size: 16px;"
+                                       text="98">
+                                    <padding>
+                                        <Insets left="5.0" right="5.0"/>
+                                    </padding>
+                                </Label>
+                                <Line fx:id="greenCarBackTire" endX="67.19998931884766" endY="75.20000457763672"
+                                      startX="53.00000762939453" startY="88.99999237060547"/>
+                                <Line fx:id="greenCarFrontTire" endX="167.00003051757812" endY="88.99998474121094"
+                                      startX="153.60000610351562" startY="73.80000305175781"/>
+                            </children>
+                        </Group>
+                        <Line endX="1050.0" endY="99.20000457763672" layoutY="237.0" startY="100.0"/>
+                        <Line endX="1050.0" endY="99.20000457763672" layoutY="5.0" startY="100.0"/>
+                        <Line endX="1050.0" endY="99.20000457763672" layoutY="121.0" startY="100.0"/>
+                    </children>
+                </Pane>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: green;">
+                    <children>
+                        <Text fill="WHITE" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                              style="-fx-font-weight: bold; -fx-font-family: Outfit;" text="FINISH"
+                              textAlignment="CENTER">
+                            <font>
+                                <Font size="28.0"/>
+                            </font>
+                        </Text>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <GridPane alignment="BASELINE_CENTER" hgap="20.0" VBox.vgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <VBox alignment="TOP_CENTER" spacing="10.0" styleClass="major-container" stylesheets="@styles.css">
+                    <children>
+                        <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" spacing="50.0">
+                            <children>
+                                <Button id="start-button" fx:id="startButton" alignment="CENTER" mnemonicParsing="false"
+                                        onAction="#startRace" prefHeight="100.0" prefWidth="200.0"
+                                        style="-fx-font-family: Outfit;" stylesheets="@styles.css" text="Start"/>
+                                <Button id="pause-button" fx:id="pauseButton" alignment="CENTER" mnemonicParsing="false"
+                                        onAction="#pauseRace" prefHeight="100.0" prefWidth="200.0"
+                                        style="-fx-font-family: Outfit;" stylesheets="@styles.css" text="Pause"/>
+                                <Button id="reset-button" fx:id="resetButton" alignment="CENTER" mnemonicParsing="false"
+                                        onAction="#resetRace" prefHeight="100.0" prefWidth="200.0"
+                                        style="-fx-font-family: Outfit;" stylesheets="@styles.css" text="Reset"/>
+                            </children>
+                        </HBox>
+                        <Label style="-fx-font-family: Outfit; -fx-font-size: 16;" text="Simulation speed:"/>
+                        <Slider fx:id="speedSlider" blockIncrement="0.25" majorTickUnit="0.5" max="2.5" min="0.5"
+                                minorTickCount="1" showTickLabels="true" showTickMarks="true" snapToTicks="true"
+                                value="1.0">
+                            <padding>
+                                <Insets bottom="12.0" left="12.0" right="12.0" top="12.0"/>
+                            </padding>
+                        </Slider>
+                    </children>
+                    <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0"/>
+                    </padding>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="major-container"
+                      stylesheets="@styles.css" GridPane.columnIndex="1">
+                    <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0"/>
+                    </padding>
+                    <children>
+                        <Label fx:id="statusText"
+                               style="-fx-font-weight: bold; -fx-font-family: Outfit; -fx-font-size: 18;"
+                               text="The race is ready!"/>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14; -fx-font-family: Outfit;"
+                              text="Final results:"/>
+                        <GridPane hgap="4.0" vgap="2.0">
+                            <columnConstraints>
+                                <ColumnConstraints maxWidth="242.59993591308594" minWidth="10.0"/>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="515.2000450134277"
+                                                   minWidth="10.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true"/>
+                                <VBox id="grid-cell" alignment="CENTER" GridPane.columnIndex="1"
+                                      GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                    <children>
+                                        <Text fx:id="firstPlaceText" strokeType="OUTSIDE" strokeWidth="0.0"
+                                              style="-fx-font-family: Outfit;" text="---"/>
+                                    </children>
+                                </VBox>
+                                <VBox id="grid-cell" alignment="CENTER" GridPane.columnIndex="1"
+                                      GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                    <children>
+                                        <Text fx:id="secondPlaceText" strokeType="OUTSIDE" strokeWidth="0.0"
+                                              style="-fx-font-family: Outfit;" text="---"/>
+                                    </children>
+                                </VBox>
+                                <VBox id="grid-cell" alignment="CENTER" GridPane.columnIndex="1"
+                                      GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                    <children>
+                                        <Text fx:id="thirdPlaceText" strokeType="OUTSIDE" strokeWidth="0.0"
+                                              style="-fx-font-family: Outfit;" text="---"/>
+                                    </children>
+                                </VBox>
+                                <VBox id="grid-cell" alignment="CENTER" GridPane.columnIndex="1"
+                                      GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                    <children>
+                                        <Text fx:id="fourthPlaceText" strokeType="OUTSIDE" strokeWidth="0.0"
+                                              style="-fx-font-family: Outfit;" text="---"/>
+                                    </children>
+                                </VBox>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0"
+                                           pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1"/>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0"
+                                           pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2"/>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="76.0"
+                                           pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3"/>
+                                <Label alignment="CENTER"
+                                       style="-fx-label-padding: 5; -fx-font-weight: bold; -fx-background-radius: 10%; -fx-background-color: gold; -fx-min-width: 50;"
+                                       text="1" textAlignment="CENTER"/>
+                                <Label alignment="CENTER"
+                                       style="-fx-label-padding: 5; -fx-font-weight: bold; -fx-background-radius: 10%; -fx-background-color: silver; -fx-min-width: 50;"
+                                       text="2" textAlignment="CENTER" GridPane.rowIndex="1"/>
+                                <Label alignment="CENTER"
+                                       style="-fx-label-padding: 5; -fx-font-weight: bold; -fx-background-radius: 10%; -fx-background-color: #CD7F32; -fx-min-width: 50;"
+                                       text="3" textAlignment="CENTER" GridPane.rowIndex="2"/>
+                                <Label alignment="CENTER"
+                                       style="-fx-label-padding: 5; -fx-font-weight: bold; -fx-background-radius: 10%; -fx-background-color: #5cabff; -fx-min-width: 50;"
+                                       text="4" textAlignment="CENTER" GridPane.rowIndex="3"/>
+                            </children>
+                            <padding>
+                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+                            </padding>
+                        </GridPane>
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
 </VBox>
