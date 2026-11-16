@@ -32,6 +32,9 @@ public class SlideshowController {
         playSlides();
     }
 
+    /**
+     * Plays the slideshow and accompanying music. When finished, changes the scene to the race scene using a helper.
+     */
     private void playSlides() {
         Timeline slideshowTimeline = new Timeline(new KeyFrame(SLIDE_DURATION, event -> {
             if (slideshowIdx < slideshowImages.length) {
@@ -45,6 +48,9 @@ public class SlideshowController {
         slideShowMusicPlayer.play();
     }
 
+    /**
+     * Changes the scene to the race scene.
+     */
     private void transitionToRaceScene() {
         slideShowMusicPlayer.stop();
 

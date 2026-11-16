@@ -10,6 +10,11 @@ public class SlideshowManager {
     private static final int SLIDE_COUNT = 5;
     private static final String SPRITESHEET_PATH = "images/Slideshow_cars.png";
 
+    /**
+     * Returns an image array of the car sprites from a spritesheet.
+     *
+     * @return The image array of the cars.
+     */
     public Image[] getSlideshowImages() {
         String url = Objects.requireNonNull(
                 getClass().getResource(SPRITESHEET_PATH),
