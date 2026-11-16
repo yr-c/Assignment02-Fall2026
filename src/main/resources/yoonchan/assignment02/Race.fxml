@@ -40,32 +40,23 @@
                     <children>
                         <Group fx:id="redCar">
                             <children>
-                                <!-- Lower body -->
                                 <Polygon fill="#e53935" points="10, 82, 10, 58, 35, 50, 185, 50, 210, 58, 210, 82"
                                          stroke="#212121" strokeWidth="1"/>
-                                <!-- Cabin -->
                                 <Polygon fill="#e53935" points="65.0, 50.0, 88.0, 2.0, 138.0, 2.0, 162.0, 50.0"
                                          stroke="#212121" strokeWidth="1"/>
-                                <!-- Windows -->
                                 <Polygon fill="#b3e5fc" points="90, 8, 112, 8, 112, 46, 72, 46"/>
                                 <Polygon fill="#b3e5fc"
                                          points="118.0, 8.0, 136.0, 8.0, 149.59999084472656, 45.99999237060547, 118.0, 46.0"/>
-                                <!-- Side mirror -->
                                 <Circle centerX="162" centerY="44" fill="#e53935" radius="4" stroke="#212121"
                                         strokeWidth="1"/>
-                                <!-- Door seam and handle -->
                                 <Line endX="112" endY="80" startX="112" startY="52" stroke="#212121" strokeWidth="1"/>
                                 <Rectangle fill="#212121" height="4" width="12" x="120" y="56"/>
-                                <!-- Headlight and taillight -->
                                 <Circle centerX="202" centerY="62" fill="#ffeb3b" radius="5"/>
                                 <Circle centerX="16" centerY="62" fill="#d32f2f" radius="5"/>
-                                <!-- Bumpers -->
                                 <Rectangle fill="#616161" height="10" width="10" x="206" y="74"/>
                                 <Rectangle fill="#616161" height="10" width="10" x="4" y="74"/>
-                                <!-- Rear wheel -->
                                 <Circle centerX="60" centerY="82" fill="#212121" radius="18"/>
                                 <Circle centerX="60" centerY="82" fill="#bdbdbd" radius="7"/>
-                                <!-- Front wheel -->
                                 <Circle centerX="160" centerY="82" fill="#212121" radius="18"/>
                                 <Circle centerX="160" centerY="82" fill="#bdbdbd" radius="7"/>
                                 <Label layoutX="97.0" layoutY="54.0"
