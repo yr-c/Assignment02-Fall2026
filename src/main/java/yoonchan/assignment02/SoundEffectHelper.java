@@ -18,6 +18,9 @@ public class SoundEffectHelper {
         mediaPlayer = new MediaPlayer(sound);
     }
 
+    /**
+     * Plays the instance's audio from the start.
+     */
     public void play() {
         if (mediaPlayer != null) {
             mediaPlayer.seek(Duration.ZERO);
@@ -25,6 +28,9 @@ public class SoundEffectHelper {
         }
     }
 
+    /**
+     * Stops the instance's audio playback.
+     */
     public void stop() {
         if (mediaPlayer != null) {
             mediaPlayer.stop();
